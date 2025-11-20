@@ -11,12 +11,12 @@
 - Skin choissisable
     - Cube
     - Ship 
-- Animations
-      - Explosion quand toucher le sol
-      - Écran mort
-      - Faire image de fond
-      - Changement de couleur
-      - Animation fin de niveau
+- Animations :
+    - Explosion quand toucher le sol
+    - Écran mort
+    - Faire image de fond
+    - Changement de couleur
+    - Animation fin de niveau
    
 - Ajouter spikes (2 tailles)
 - Ajouter cubes
