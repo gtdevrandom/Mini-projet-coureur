@@ -11,16 +11,22 @@
 - Skin choissisable
     - Cube
     - Ship 
-- animations
+- Animations
+  -explosion quand toucher le sol
+  -ecran mort
+  -faire image de fond
+  -changement de couleur
+  -animation fin de niveau
+   
 - Ajouter spikes (2 tailles)
 - Ajouter cubes
 - Ajouter sauts
 - ajouter orbs ?
 
 
-- Ajouter ship ?
+- Ajouter ship 
 - ajouter zig zag
+    -animation changement entre cube et ship 
 - Ajouter changement de ciel ?
 - Ajouter des portails ?
-    - Portails qui fait changer le sens 
     - Portails qui fait transformer en ship     
