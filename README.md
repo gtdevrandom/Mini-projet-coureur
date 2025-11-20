@@ -1,7 +1,14 @@
 # Jeu style geometry dash
 
-- Skin choissisable
 - Ajouter menu
+    - Menu lancer le jeu
+    - Paramètres
+        - Son
+        - Musique
+    - skins
+    
+
+- Skin choissisable
 - animations
 - Ajouter spikes (2 tailles)
 - Ajouter cubes
