@@ -3,13 +3,20 @@ from pygame.locals import *
 
 
 #****************************************
+
 class personnage:
     def __init__(self, x, y, size=50, color=(0, 128, 255), speed=200, screen_height=600):
         self.rect = pygame.Rect(int(x), int(y), int(size), int(size))
         self.color = color
         self.speed = float(speed)
         self.screen_height = int(screen_height)
-        self.vel_y = 0.0  
+        self.vel_y = 0.0
+        # Chargement du skin
+        try:
+            self.skin = pygame.image.load('personnages/personnages.png').convert_alpha()
+            self.skin = pygame.transform.scale(self.skin, (size, size))
+        except Exception:
+            self.skin = None
 
     def move_up(self):
         self.vel_y = -self.speed
@@ -35,7 +42,10 @@ class personnage:
             self.vel_y = 0
 
     def draw(self, surface):
-        pygame.draw.rect(surface, self.color, self.rect)
+        if self.skin:
+            surface.blit(self.skin, self.rect)
+        else:
+            pygame.draw.rect(surface, self.color, self.rect)
 
 
 

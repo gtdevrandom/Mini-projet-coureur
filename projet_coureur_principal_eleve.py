@@ -1,7 +1,7 @@
 import pygame, sys
 from pygame.locals import *
 
-from projet_coureur_personnage import *
+# from projet_coureur_personnage import *
 #from projet_coureur_arbre import *
 
 
@@ -10,8 +10,6 @@ from projet_coureur_personnage import *
 def affichage_rue():
     pygame.draw.rect(window, (192,192,192),(0, 200, WIDTH, HEIGHT//2),0)
 
-
-
 #***************** prog principal ********************
 pygame.init()
 
@@ -19,7 +17,6 @@ pygame.init()
 WIDTH = 800
 HEIGHT = 300
 window = pygame.display.set_mode((WIDTH, HEIGHT), 0, 32)
-pygame.display.set_caption('Balade en ville')
 CIEL = (135,206,235)
 
 sonic = personnage()
