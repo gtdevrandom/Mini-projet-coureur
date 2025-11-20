@@ -13,7 +13,7 @@ class personnage:
         self.vel_y = 0.0
         # Chargement du skin
         try:
-            self.skin = pygame.image.load('personnages/personnages.png').convert_alpha()
+            self.skin = pygame.image.load('perso/personnage/personnage.png').convert_alpha()
             self.skin = pygame.transform.scale(self.skin, (size, size))
         except Exception:
             self.skin = None
@@ -79,4 +79,5 @@ class personnage:
 #         self.index = self.index +1
 #         if self.index == len(self.image):
 #             self.index=0
+
 #         self.affichage_personnage(fenetre,self.index)
