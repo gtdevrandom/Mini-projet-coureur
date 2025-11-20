@@ -31,9 +31,11 @@ def menu_screen(window):
     options = ['Jouer', 'Paramètres', 'Quitter']
     clock = pygame.time.Clock()
     option_rects = [None] * len(options)
+    title_img = pygame.image.load('title/title.png')
+    title_rect = title_img.get_rect(center=(WIDTH//2, 60))
     while True:
         window.fill(BLACK)
-        draw_text(window, 'NEONDASH', 60, WIDTH//2, 80, CYAN)
+        window.blit(title_img, title_rect)
         for i, option in enumerate(options):
             color = MAGENTA if i == selected else WHITE
             rect = draw_text(window, option, 40, WIDTH//2, 180 + i*60, color, return_rect=True)
