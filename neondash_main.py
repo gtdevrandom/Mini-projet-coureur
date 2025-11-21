@@ -93,7 +93,7 @@ def game_screen(window):
 
     # Chargement de l'image de fond
 
-    fond_img = pygame.image.load('fond/fond.png').convert()
+    fond_img = pygame.image.load('fond/base/fond.png').convert()
     fond_img = pygame.transform.scale(fond_img, (WIDTH, HEIGHT))
     fond_x = 0
     fond_speed = 100  # pixels par seconde (ajuster pour la vitesse de défilement)
@@ -156,4 +156,5 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
