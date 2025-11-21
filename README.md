@@ -14,7 +14,7 @@
 - Animations :
     - Explosion quand toucher le sol
     - Écran mort
-    - Faire image de fond
+    ~~- Faire image de fond~~
     - Changement de couleur
     - Animation fin de niveau
    
@@ -33,7 +33,7 @@
 
 
 # Ordre du fond de la map
-- Fond de map
-- Chaines + grottes ?
+~~- Fond de map~~
+- Chaines + briques + lanternes
 - Particules
 - jeu
