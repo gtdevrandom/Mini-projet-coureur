@@ -17,7 +17,7 @@
     - Explosion quand toucher le sol
     - Écran mort
     ~~- Faire image de fond~~
-    - Changement de couleur
+    - ~~Changement de couleur~~
     - Animation fin de niveau
    
 - ~~Ajouter spikes (2 tailles)~~
@@ -36,6 +36,6 @@
 
 # Ordre du fond de la map
 - ~~Fond de map~~
-- Chaines + briques + lanternes
+- ~~Chaines + briques + lanternes~~
 - Particules
 - jeu
