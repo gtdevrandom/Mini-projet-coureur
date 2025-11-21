@@ -4,7 +4,7 @@ from neondash_personnage import personnage
 from neondash_cube import Cube
 from neondash_spike import Spike
 
-WIDTH, HEIGHT = 800, 400
+WIDTH, HEIGHT = 1600, 800
 FPS = 60
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
@@ -91,10 +91,25 @@ def game_screen(window):
     running = True
     player = personnage(100, HEIGHT//2, size=50, color=(0, 200, 255), screen_height=HEIGHT)
 
+    # Chargement de l'image de fond
+
+    fond_img = pygame.image.load('fond/fond.png').convert()
+    fond_img = pygame.transform.scale(fond_img, (WIDTH, HEIGHT))
+    fond_x = 0
+    fond_speed = 100  # pixels par seconde (ajuster pour la vitesse de défilement)
+
     mouse_held = False
     while running:
         dt = clock.tick(FPS) / 1000.0
-        window.fill((30, 30, 40))
+
+        # Défilement du fond
+        fond_x -= fond_speed * dt
+        if fond_x <= -WIDTH:
+            fond_x += WIDTH
+
+        # Affichage du fond (2 images pour recoller à l'infini)
+        window.blit(fond_img, (fond_x, 0))
+        window.blit(fond_img, (fond_x + WIDTH, 0))
 
         # Gestion des événements
         for event in pygame.event.get():
