@@ -1,5 +1,7 @@
 # Jeu style geometry dash
 
+## Pour télécharger : ajouter pygame avec "pip install pygame"
+
 - Ajouter menu
     - ~~Menu lancer le jeu~~
     - ~~Paramètres~~
