@@ -2,6 +2,7 @@ import pygame
 import sys
 from neondash_personnage import personnage
 from neondash_map import GameMap
+from neondash_particles import ParticleSystem
 
 WIDTH, HEIGHT = 1600, 800
 FPS = 60
@@ -89,7 +90,8 @@ def game_screen(window):
     running = True
     player = personnage(100, HEIGHT//2, size=50, color=(0, 200, 255), screen_height=HEIGHT)
 
-    game_map = GameMap(WIDTH, HEIGHT, map_file='maps/example_map.json')
+    game_map = GameMap(WIDTH, HEIGHT, map_file='maps/maps.json')  # Correction du nom de map
+    particle_system = ParticleSystem(WIDTH, HEIGHT, count=12)  # Ajout du système de particules
 
     mouse_held = False
     while running:
@@ -116,6 +118,7 @@ def game_screen(window):
             player.jump()
 
         game_map.update(dt)
+        particle_system.update(dt)  # Mise à jour des particules
 
         prev_bottom = player.rect.bottom
 
@@ -143,6 +146,7 @@ def game_screen(window):
                 return MENU
 
         game_map.draw(window)
+        particle_system.draw(window)  # Affichage des particules (au-dessus de la map)
         player.draw(window)
 
         draw_text(window, 'Echap pour menu', 24, WIDTH//2, 30, CYAN)
