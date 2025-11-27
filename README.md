@@ -6,7 +6,7 @@ Installation
 
 1.  Installer Pygame : <code>pip install pygame</code>
 
-2.  Lancer le jeu : <code>python main.py</code>
+2.  Lancer le jeu : <code>python neondash_main.py</code>
 
 ## Fonctionnalités
 
