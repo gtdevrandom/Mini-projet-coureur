@@ -62,6 +62,9 @@ Installation
 3.  Particules
 4.  Jeu
 
+<img width="1600" height="799" alt="{DDE5D98C-96B6-43DB-B138-DDAC5F2FF707}" src="https://github.com/user-attachments/assets/504c97a7-53cf-40b2-b008-cf9a6d92b269" />
+
+
 ## To-Do List
 
 -   ☒ Menu + paramètres
