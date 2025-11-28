@@ -10,12 +10,19 @@ class personnage:
         self.vel_y = 0.0
         self.gravity = 900
         self.jump_strength = -500  # vitesse de saut (négatif = vers le haut)
-        # Chargement du skin
+        # Chargement du skin principal
+        self.size = size
         try:
-            self.skin = pygame.image.load('textures/perso/personnage/personnage.png').convert_alpha()
-            self.skin = pygame.transform.scale(self.skin, (size, size))
-        except Exception:
+            self.skin_base = pygame.image.load('textures/perso/personnage/personnage.png').convert_alpha()
+            self.skin_base = pygame.transform.scale(self.skin_base, (size, size))
+            self.skin_jump = pygame.image.load('textures/perso/personnage/personnage1.png').convert_alpha()
+            self.skin_jump = pygame.transform.scale(self.skin_jump, (size, size))
+            self.skin = self.skin_base
+        except Exception: #si les images ne sont pas trouvées
+            self.skin_base = None
+            self.skin_jump = None
             self.skin = None
+        self.jump_anim_timer = 0.0
         # Indicateur si le joueur est sur une plateforme (autre que le sol)
         self.on_ground = False
 
@@ -24,11 +31,12 @@ class personnage:
         # Saut uniquement si au sol (sol ou plateforme) pour éviter double jump
         if self.rect.bottom >= self.screen_height or self.on_ground:
             self.vel_y = self.jump_strength
-
+            if self.skin_jump:
+                self.skin = self.skin_jump
+                self.jump_anim_timer = 0.5  # Durée en secondes
 
     def stop(self):
         pass  # Ne rien faire, la gravité s'applique toujours
-
 
     def set_velocity(self, vy):
         self.vel_y = float(vy)
@@ -39,6 +47,12 @@ class personnage:
         self.vel_y += self.gravity * dt
         dy = self.vel_y * float(dt)
         self.rect.y += int(dy)
+
+        # Timer pour revenir à la texture de base après le saut
+        if self.jump_anim_timer > 0:
+            self.jump_anim_timer -= dt
+            if self.jump_anim_timer <= 0 and self.skin_base:
+                self.skin = self.skin_base
 
         if self.rect.top < 0:
             self.rect.top = 0
